@@ -1,54 +1,55 @@
 ﻿using System;
-namespace hour
+namespace zoozanaghe
 {
+
+
+    class test2
+    {
+        private int A;
+        private int B;
+        private int H;
+
+        public test2(int a, int b, int h)
+        {
+            A = a;
+            B = b;
+            H = h;
+        }
+        public test2() { }
+        public int a
+        {
+            get { return A; }
+            set { A = value; }
+        }
+        public int b
+        {
+            get { return B; }
+            set { B = value; }
+        }
+        public int h
+        {
+            get { return H; }
+            set { H = value; }
+        }
+        public int S()
+        {
+            return (A + B) / 2;
+        }
+
+    }
     class test1
     {
         public static void Main()
         {
-            
-            int hour = Convert.ToInt32(Console.ReadLine());
-            int minute = Convert.ToInt32(Console.ReadLine());
-            test t = new test(hour,minute);
-            t.time();
+            test2 t = new test2();
+            t.a = Convert.ToInt32(Console.ReadLine());
+            t.b = Convert.ToInt32(Console.ReadLine());
+            t.h = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine(t.S());
 
 
 
         }
     }
-    class test
-    {
-        private int hour;
-        private int minute;
-        public int H
-        {
-            get { return hour; }
-            set { hour = value; }
-        }
-        public int Minute
-        {
-            get { return minute; }
-            set { minute = value; }
-        }
-        public test(int H, int M)
-        {
-            hour = H;
-            minute = M;
-        }
-        public test() { }
-
-        public void time()
-        {
-            if (hour <= 12)
-            {
-                Console.WriteLine(hour +":"+ minute + "Am");
-            }
-            else
-            {
-                hour -= 12;
-                Console.WriteLine(hour +":" + minute + "pm");
-            }
-        }
-
-    }
-    
 }
+

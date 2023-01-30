@@ -1,61 +1,110 @@
 ﻿using System;
-namespace toolKhat
+namespace haghotadris
 {
-    class test1
-    {
-        private double x1;
-        private double y1;
-        private double x2;
-        private double y2;
-        public double A
-        {
-            get { return x1; }
-            set { x1 = value; }
-        }
-        public double B
-        {
-            get { return y1; }
-            set { y1 = value; }
-        }
-        public double C
-        {
-            get { return x2; }
-            set { x2 = value; }
-        }
-        public double D
-        {
-           get { return y2; }
-            set { y2 = value; }
-        }
-
-        public test1(int a,int b,int c,int d)
-        {
-            x1 = a;
-            y1 = b;
-            x2 = c;
-            y2 = d;
-        }
-        public test1 (){}
-
-        public double Tool()
-        {
-            double tool = Math.Sqrt(Math.Pow(x2-x1 ,2) + Math.Pow(y2-y1 ,2));
-            return tool;
-        }
-    }
-    class test2
+    class test
     {
         public static void Main()
         {
             test1 t = new test1();
-            t.A=Convert.ToInt32(Console.ReadLine());
-            t.B=Convert.ToInt32(Console.ReadLine());
-            t.C = Convert.ToInt32(Console.ReadLine());
-            t.D = Convert.ToInt32(Console.ReadLine());
-            
-            Console.WriteLine(t.Tool());
+            Console.WriteLine("Name:");
+            t.Name = Console.ReadLine();
+            Console.WriteLine("Family Name:");
+            t.FamilyName = Console.ReadLine();
+            Console.WriteLine("id:");
+            t.Num = Console.ReadLine();
+            Console.WriteLine("Price:");
+            t.Price = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Time:");
+            t.Time = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine(t.S());
+        }
+    }
 
+    class test1
+    {
+        private string num;
+        private string name;
+        private string familyName;
+        private int time;
+        private int price;
 
+        public test1(string Num,string Name,string FamilyName,int Time,int Price)
+        {
+            num = Num;
+            name = Name;
+            familyName = FamilyName;
+            time = Time;
+            price = Price;
+        }
+        public test1()
+        { }
+
+        public string Num
+        {
+            get { return num; }
+            set { num = value; }
+        }
+        public string Name
+        {
+            get { return name; }
+            set { name = value; }
+        }
+
+        public string FamilyName
+        {
+            get { return familyName; }
+            set { familyName = value; }
+        }
+
+        public int Time
+        {
+            get { return time; }
+            set
+            {
+                if (value > 0)
+                { time = value; }
+                else
+                { time = 0; }
+            }
+        }
+
+        public int Price
+        {
+            get { return price; }
+            set { price = value; }
+        }
+
+        public int S()
+        {
+            return Time * Price;
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
